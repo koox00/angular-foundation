@@ -88,7 +88,9 @@ angular.module('mm.foundation.pagination', [])
       onSelectPage:' &'
     },
     controller: 'PaginationController',
-    templateUrl: 'template/pagination/pagination.html',
+    templateUrl: function(element, attrs) {
+      return attrs.templateUrl || 'template/pagination/pagination.html';
+    },
     replace: true,
     link: function(scope, element, attrs, paginationCtrl) {
 
